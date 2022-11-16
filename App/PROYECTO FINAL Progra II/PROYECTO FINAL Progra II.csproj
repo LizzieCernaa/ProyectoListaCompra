@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{DB7CA5DB-D063-4078-8CA7-1B26B40EA1C3}</ProjectGuid>
+    <ProjectGuid>{2FB62153-9731-4F04-B60F-E64008DA8B5C}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>ProyectoListaCompras</RootNamespace>
-    <AssemblyName>ProyectoListaCompras</AssemblyName>
+    <RootNamespace>PROYECTO_FINAL_Progra_II</RootNamespace>
+    <AssemblyName>PROYECTO FINAL Progra II</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -46,16 +46,81 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Conexion.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form_Actualizar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Actualizar.Designer.cs">
+      <DependentUpon>Form_Actualizar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_AgregarProductos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_AgregarProductos.Designer.cs">
+      <DependentUpon>Form_AgregarProductos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_Eliminar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Eliminar.Designer.cs">
+      <DependentUpon>Form_Eliminar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_Historial.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Historial.Designer.cs">
+      <DependentUpon>Form_Historial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_Mostrar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Mostrar.Designer.cs">
+      <DependentUpon>Form_Mostrar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_NuevaLista.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_NuevaLista.Designer.cs">
+      <DependentUpon>Form_NuevaLista.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_Productos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Productos.Designer.cs">
+      <DependentUpon>Form_Productos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Listas.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_Actualizar.resx">
+      <DependentUpon>Form_Actualizar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_AgregarProductos.resx">
+      <DependentUpon>Form_AgregarProductos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_Eliminar.resx">
+      <DependentUpon>Form_Eliminar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_Historial.resx">
+      <DependentUpon>Form_Historial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_Mostrar.resx">
+      <DependentUpon>Form_Mostrar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_NuevaLista.resx">
+      <DependentUpon>Form_NuevaLista.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_Productos.resx">
+      <DependentUpon>Form_Productos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

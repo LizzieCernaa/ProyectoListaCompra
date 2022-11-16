@@ -8,13 +8,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace ProyectoListaCompras
+namespace PROYECTO_FINAL_Progra_II
 {
-    public partial class Form1 : Form
+    public partial class Form_Productos : Form
     {
-        public Form1()
+        public Form_Productos()
         {
             InitializeComponent();
+        }
+
+        private void btn_Cerrar_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

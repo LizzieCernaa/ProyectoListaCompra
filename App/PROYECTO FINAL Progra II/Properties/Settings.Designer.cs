@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ProyectoListaCompras.Properties
+namespace PROYECTO_FINAL_Progra_II.Properties
 {
 
 
