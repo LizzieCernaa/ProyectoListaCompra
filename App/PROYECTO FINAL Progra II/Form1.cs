@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using PROYECTO_FINAL_Progra_II.Data.Repositories;
+using PROYECTO_FINAL_Progra_II.Data.Models;
 
 
 namespace PROYECTO_FINAL_Progra_II
@@ -26,6 +28,14 @@ namespace PROYECTO_FINAL_Progra_II
         private void Form1_Load(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Maximized;
+
+           //Supermercado s = new Supermercado();
+           // s.Nombre = "Despensa de Don Juan";
+
+           // SupermercadoRepository r = new SupermercadoRepository();
+           //var resuldato = r.AddSupermercado(s);
+           // MessageBox.Show(resuldato.ToString());
+
 
 
         }
