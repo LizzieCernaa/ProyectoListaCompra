@@ -26,8 +26,8 @@ namespace PROYECTO_FINAL_Progra_II.Data.Repositories
                 {
                     Nombre = producto.Nombre,
                     Precio = producto.Precio,
-                    Foto = producto.Precio,
-                    IdCategorio = producto.IdCategoria,
+                    Foto = producto.Foto,
+                    IdCategoria = producto.IdCategoria,
                     idSupermercado = producto.IdSupermercado,
                 });
 

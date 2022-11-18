@@ -13,6 +13,6 @@ namespace PROYECTO_FINAL_Progra_II.Data.Models
         public double Precio { get; set; }
         public int IdCategoria { get; set; }
         public int IdSupermercado { get; set; }
-        public System.Drawing.Image Foto { get; set; } 
+        public byte[] Foto { get; set; } 
     }
 }

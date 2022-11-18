@@ -30,8 +30,21 @@ namespace PROYECTO_FINAL_Progra_II.Data.Repositories
             //Devolvemos el id del registro insertado
             return id;
 
+        }
 
+        public List<Categoria> GetCategoria()
+        {
+            //SQL que ejecutara Dapper, aquí puedes jugar con los orders que quieras.
+            string sql = @"select Id, Nombre from Categoria";
 
+            //Iniciar la conexión con la base de datos
+            var db = this.GetConnection();
+
+            //Ejecutar la consulta SQL y almacenar las líneas en nuestro modelo. 
+            var categorias = db.Query<Categoria>(sql);
+
+            //Dapper devuelve un IEnumerable para trabajar más cómodos lo convertimos a listas. 
+            return categorias.ToList();
         }
     }
 }
