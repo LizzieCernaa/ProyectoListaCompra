@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -28,7 +29,7 @@ namespace PROYECTO_FINAL_Progra_II
             producto.Precio =double.Parse(txtPrecio.Text);
             producto.IdCategoria = categorias[cmbCategoria.SelectedIndex].Id;
             producto.IdSupermercado = supermercados[cmbSupermercados.SelectedIndex].Id;
-            producto.Foto = ptxFoto.Image;
+            producto.Foto = ImageToByteArray(ptxFoto.Image);
 
             var repository = new ProductoRepository();
             var resul = repository.AddProducto(producto);
@@ -81,6 +82,14 @@ namespace PROYECTO_FINAL_Progra_II
             }
 
            
+        }
+        public byte[] ImageToByteArray(System.Drawing.Image imageIn)
+        {
+            using (var ms = new MemoryStream())
+            {
+                imageIn.Save(ms, imageIn.RawFormat);
+                return ms.ToArray();
+            }
         }
     }
 }

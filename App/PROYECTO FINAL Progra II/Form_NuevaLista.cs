@@ -28,11 +28,11 @@ namespace PROYECTO_FINAL_Progra_II
         private void btn_AgregarProductos_Click(object sender, EventArgs e)
         {
  
-           Form_AgregarProductos frm = new Form_AgregarProductos();
+           frmAgregarProductoLista frm = new frmAgregarProductoLista();
             frm.MdiParent = this.ParentForm;
             frm.Show();
-            
         }
+
 
         private void btn_Cerrar_Click(object sender, EventArgs e)
         {

@@ -35,7 +35,7 @@ namespace PROYECTO_FINAL_Progra_II.Data.Repositories
         public List<Categoria> GetCategoria()
         {
             //SQL que ejecutara Dapper, aquí puedes jugar con los orders que quieras.
-            string sql = @"select Id, Nombre from Categoria";
+            string sql = @"select Id, Nombre from Categoria order by Nombre;";
 
             //Iniciar la conexión con la base de datos
             var db = this.GetConnection();

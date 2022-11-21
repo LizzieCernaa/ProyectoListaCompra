@@ -36,9 +36,13 @@ namespace PROYECTO_FINAL_Progra_II
            //var resuldato = r.AddSupermercado(s);
            // MessageBox.Show(resuldato.ToString());
 
-
+            //ProductoRepository productoRepository = new ProductoRepository();
+            //var pr = productoRepository.GetProducto();
+            //MessageBox.Show(pr.ToString());
 
         }
+
+        
 
         private void opcionesToolStripMenuItem_Click(object sender, EventArgs e)
         {

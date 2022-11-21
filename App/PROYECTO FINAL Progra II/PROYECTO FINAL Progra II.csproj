@@ -83,11 +83,11 @@
     <Compile Include="Form_Actualizar.Designer.cs">
       <DependentUpon>Form_Actualizar.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form_AgregarProductos.cs">
+    <Compile Include="FormAgregarProductos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form_AgregarProductos.Designer.cs">
-      <DependentUpon>Form_AgregarProductos.cs</DependentUpon>
+    <Compile Include="FormAgregarProductos.Designer.cs">
+      <DependentUpon>FormAgregarProductos.cs</DependentUpon>
     </Compile>
     <Compile Include="Form_Eliminar.cs">
       <SubType>Form</SubType>
@@ -119,6 +119,12 @@
     <Compile Include="Form_Productos.Designer.cs">
       <DependentUpon>Form_Productos.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmAgregarProductoLista.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAgregarProductoLista.Designer.cs">
+      <DependentUpon>frmAgregarProductoLista.cs</DependentUpon>
+    </Compile>
     <Compile Include="Listas.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -128,8 +134,8 @@
     <EmbeddedResource Include="Form_Actualizar.resx">
       <DependentUpon>Form_Actualizar.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form_AgregarProductos.resx">
-      <DependentUpon>Form_AgregarProductos.cs</DependentUpon>
+    <EmbeddedResource Include="FormAgregarProductos.resx">
+      <DependentUpon>FormAgregarProductos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form_Eliminar.resx">
       <DependentUpon>Form_Eliminar.cs</DependentUpon>
@@ -145,6 +151,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form_Productos.resx">
       <DependentUpon>Form_Productos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAgregarProductoLista.resx">
+      <DependentUpon>frmAgregarProductoLista.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
