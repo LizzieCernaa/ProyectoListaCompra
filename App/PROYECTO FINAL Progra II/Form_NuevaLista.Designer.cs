@@ -28,12 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.dtgDetalleLista = new System.Windows.Forms.DataGridView();
             this.bton_Guardar = new System.Windows.Forms.Button();
             this.btn_AgregarProductos = new System.Windows.Forms.Button();
-            this.btn_Actualizar = new System.Windows.Forms.Button();
             this.btn_Cerrar = new System.Windows.Forms.Button();
             this.cmbSupermercados = new System.Windows.Forms.ComboBox();
             this.dtgProductos = new System.Windows.Forms.DataGridView();
@@ -43,16 +43,27 @@
             this.cmbCategoria = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.lbTotal = new System.Windows.Forms.Label();
+            this.btnEliminarProducto = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
+            this.lbIdLista = new System.Windows.Forms.Label();
+            this.productoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.precioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idCategoriaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idSupermercadoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fotoDataGridViewImageColumn = new System.Windows.Forms.DataGridViewImageColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dtgDetalleLista)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtgProductos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ndCantidad)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productoBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(489, 36);
+            this.label1.Location = new System.Drawing.Point(591, 24);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(135, 20);
             this.label1.TabIndex = 0;
@@ -61,7 +72,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(60, 129);
+            this.label4.Location = new System.Drawing.Point(15, 129);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(122, 16);
             this.label4.TabIndex = 5;
@@ -71,21 +82,24 @@
             // 
             this.dtgDetalleLista.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgDetalleLista.Location = new System.Drawing.Point(18, 168);
+            this.dtgDetalleLista.MultiSelect = false;
             this.dtgDetalleLista.Name = "dtgDetalleLista";
             this.dtgDetalleLista.RowHeadersWidth = 51;
             this.dtgDetalleLista.RowTemplate.Height = 24;
+            this.dtgDetalleLista.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtgDetalleLista.Size = new System.Drawing.Size(497, 310);
             this.dtgDetalleLista.TabIndex = 9;
             // 
             // bton_Guardar
             // 
             this.bton_Guardar.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bton_Guardar.Location = new System.Drawing.Point(32, 596);
+            this.bton_Guardar.Location = new System.Drawing.Point(241, 596);
             this.bton_Guardar.Name = "bton_Guardar";
             this.bton_Guardar.Size = new System.Drawing.Size(130, 47);
             this.bton_Guardar.TabIndex = 10;
             this.bton_Guardar.Text = "Guardar";
             this.bton_Guardar.UseVisualStyleBackColor = true;
+            this.bton_Guardar.Click += new System.EventHandler(this.bton_Guardar_Click);
             // 
             // btn_AgregarProductos
             // 
@@ -99,23 +113,12 @@
             this.btn_AgregarProductos.UseVisualStyleBackColor = false;
             this.btn_AgregarProductos.Click += new System.EventHandler(this.btn_AgregarProductos_Click);
             // 
-            // btn_Actualizar
-            // 
-            this.btn_Actualizar.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_Actualizar.Location = new System.Drawing.Point(207, 618);
-            this.btn_Actualizar.Name = "btn_Actualizar";
-            this.btn_Actualizar.Size = new System.Drawing.Size(105, 47);
-            this.btn_Actualizar.TabIndex = 12;
-            this.btn_Actualizar.Text = "Actualizar";
-            this.btn_Actualizar.UseVisualStyleBackColor = true;
-            this.btn_Actualizar.Click += new System.EventHandler(this.btn_Actualizar_Click);
-            // 
             // btn_Cerrar
             // 
             this.btn_Cerrar.BackColor = System.Drawing.Color.IndianRed;
             this.btn_Cerrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btn_Cerrar.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btn_Cerrar.Location = new System.Drawing.Point(377, 596);
+            this.btn_Cerrar.Location = new System.Drawing.Point(388, 596);
             this.btn_Cerrar.Name = "btn_Cerrar";
             this.btn_Cerrar.Size = new System.Drawing.Size(138, 45);
             this.btn_Cerrar.TabIndex = 13;
@@ -126,15 +129,25 @@
             // cmbSupermercados
             // 
             this.cmbSupermercados.FormattingEnabled = true;
-            this.cmbSupermercados.Location = new System.Drawing.Point(207, 129);
+            this.cmbSupermercados.Location = new System.Drawing.Point(143, 126);
             this.cmbSupermercados.Name = "cmbSupermercados";
-            this.cmbSupermercados.Size = new System.Drawing.Size(230, 24);
+            this.cmbSupermercados.Size = new System.Drawing.Size(372, 24);
             this.cmbSupermercados.TabIndex = 14;
             // 
             // dtgProductos
             // 
+            this.dtgProductos.AutoGenerateColumns = false;
             this.dtgProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dtgProductos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idDataGridViewTextBoxColumn,
+            this.nombreDataGridViewTextBoxColumn,
+            this.precioDataGridViewTextBoxColumn,
+            this.idCategoriaDataGridViewTextBoxColumn,
+            this.idSupermercadoDataGridViewTextBoxColumn,
+            this.fotoDataGridViewImageColumn});
+            this.dtgProductos.DataSource = this.productoBindingSource;
             this.dtgProductos.Location = new System.Drawing.Point(595, 168);
+            this.dtgProductos.MultiSelect = false;
             this.dtgProductos.Name = "dtgProductos";
             this.dtgProductos.ReadOnly = true;
             this.dtgProductos.RowHeadersWidth = 51;
@@ -201,11 +214,103 @@
             this.lbTotal.Text = "0.0";
             this.lbTotal.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
+            // btnEliminarProducto
+            // 
+            this.btnEliminarProducto.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEliminarProducto.Location = new System.Drawing.Point(32, 594);
+            this.btnEliminarProducto.Name = "btnEliminarProducto";
+            this.btnEliminarProducto.Size = new System.Drawing.Size(130, 47);
+            this.btnEliminarProducto.TabIndex = 22;
+            this.btnEliminarProducto.Text = "Quitar Producto de Lista";
+            this.btnEliminarProducto.UseVisualStyleBackColor = true;
+            this.btnEliminarProducto.Click += new System.EventHandler(this.btnEliminarProducto_Click);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(62, 77);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(60, 16);
+            this.label6.TabIndex = 23;
+            this.label6.Text = "ID LISTA";
+            // 
+            // lbIdLista
+            // 
+            this.lbIdLista.AutoSize = true;
+            this.lbIdLista.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbIdLista.Location = new System.Drawing.Point(138, 70);
+            this.lbIdLista.Name = "lbIdLista";
+            this.lbIdLista.Size = new System.Drawing.Size(20, 25);
+            this.lbIdLista.TabIndex = 24;
+            this.lbIdLista.Text = "-";
+            // 
+            // productoBindingSource
+            // 
+            this.productoBindingSource.DataSource = typeof(PROYECTO_FINAL_Progra_II.Data.Models.Producto);
+            // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
+            this.idDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // nombreDataGridViewTextBoxColumn
+            // 
+            this.nombreDataGridViewTextBoxColumn.DataPropertyName = "Nombre";
+            this.nombreDataGridViewTextBoxColumn.HeaderText = "Nombre";
+            this.nombreDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.nombreDataGridViewTextBoxColumn.Name = "nombreDataGridViewTextBoxColumn";
+            this.nombreDataGridViewTextBoxColumn.ReadOnly = true;
+            this.nombreDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // precioDataGridViewTextBoxColumn
+            // 
+            this.precioDataGridViewTextBoxColumn.DataPropertyName = "Precio";
+            this.precioDataGridViewTextBoxColumn.HeaderText = "Precio";
+            this.precioDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.precioDataGridViewTextBoxColumn.Name = "precioDataGridViewTextBoxColumn";
+            this.precioDataGridViewTextBoxColumn.ReadOnly = true;
+            this.precioDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // idCategoriaDataGridViewTextBoxColumn
+            // 
+            this.idCategoriaDataGridViewTextBoxColumn.DataPropertyName = "IdCategoria";
+            this.idCategoriaDataGridViewTextBoxColumn.HeaderText = "IdCategoria";
+            this.idCategoriaDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.idCategoriaDataGridViewTextBoxColumn.Name = "idCategoriaDataGridViewTextBoxColumn";
+            this.idCategoriaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idCategoriaDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // idSupermercadoDataGridViewTextBoxColumn
+            // 
+            this.idSupermercadoDataGridViewTextBoxColumn.DataPropertyName = "IdSupermercado";
+            this.idSupermercadoDataGridViewTextBoxColumn.HeaderText = "IdSupermercado";
+            this.idSupermercadoDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.idSupermercadoDataGridViewTextBoxColumn.Name = "idSupermercadoDataGridViewTextBoxColumn";
+            this.idSupermercadoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idSupermercadoDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // fotoDataGridViewImageColumn
+            // 
+            this.fotoDataGridViewImageColumn.DataPropertyName = "Foto";
+            this.fotoDataGridViewImageColumn.HeaderText = "Foto";
+            this.fotoDataGridViewImageColumn.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
+            this.fotoDataGridViewImageColumn.MinimumWidth = 6;
+            this.fotoDataGridViewImageColumn.Name = "fotoDataGridViewImageColumn";
+            this.fotoDataGridViewImageColumn.ReadOnly = true;
+            this.fotoDataGridViewImageColumn.Width = 125;
+            // 
             // Form_NuevaLista
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1528, 699);
+            this.ClientSize = new System.Drawing.Size(1487, 699);
+            this.Controls.Add(this.lbIdLista);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.btnEliminarProducto);
             this.Controls.Add(this.lbTotal);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.cmbCategoria);
@@ -215,7 +320,6 @@
             this.Controls.Add(this.dtgProductos);
             this.Controls.Add(this.cmbSupermercados);
             this.Controls.Add(this.btn_Cerrar);
-            this.Controls.Add(this.btn_Actualizar);
             this.Controls.Add(this.btn_AgregarProductos);
             this.Controls.Add(this.bton_Guardar);
             this.Controls.Add(this.dtgDetalleLista);
@@ -229,6 +333,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dtgDetalleLista)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtgProductos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ndCantidad)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productoBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -241,7 +346,6 @@
         private System.Windows.Forms.DataGridView dtgDetalleLista;
         private System.Windows.Forms.Button bton_Guardar;
         private System.Windows.Forms.Button btn_AgregarProductos;
-        private System.Windows.Forms.Button btn_Actualizar;
         private System.Windows.Forms.Button btn_Cerrar;
         private System.Windows.Forms.ComboBox cmbSupermercados;
         private System.Windows.Forms.DataGridView dtgProductos;
@@ -251,5 +355,15 @@
         private System.Windows.Forms.ComboBox cmbCategoria;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label lbTotal;
+        private System.Windows.Forms.Button btnEliminarProducto;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label lbIdLista;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nombreDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn precioDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idCategoriaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idSupermercadoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewImageColumn fotoDataGridViewImageColumn;
+        private System.Windows.Forms.BindingSource productoBindingSource;
     }
 }

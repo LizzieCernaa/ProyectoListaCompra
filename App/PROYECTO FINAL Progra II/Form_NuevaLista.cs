@@ -18,6 +18,7 @@ namespace PROYECTO_FINAL_Progra_II
         double total;
         List<Categoria> categorias;
         List<DetalleListaDto> detalleListas = new List<DetalleListaDto>();
+        List<Supermercado> supermercados = new List<Supermercado>();
         public Form_NuevaLista()
         {
             InitializeComponent();
@@ -43,13 +44,13 @@ namespace PROYECTO_FINAL_Progra_II
                 return;
             }
 
+            var row = dtgProductos.SelectedRows[0];
 
             var Dt = new DetalleListaDto();
-            Dt.IdProducto = 8;
-            Dt.Cantidad = 17;
-            Dt.Nombre = "Lechuga";
-            Dt.Precio = 10.50;
-
+            Dt.IdProducto = int.Parse(row.Cells[0].Value.ToString());
+            Dt.Cantidad = double.Parse(ndCantidad.Value.ToString());
+            Dt.Nombre = row.Cells[1].Value.ToString();
+            Dt.Precio = double.Parse(row.Cells[2].Value.ToString());
             total += Dt.SubTotal;
             lbTotal.Text = total.ToString();
             detalleListas.Add(Dt);
@@ -59,6 +60,8 @@ namespace PROYECTO_FINAL_Progra_II
 
             dtgDetalleLista.DataSource = detalleListas;
             dtgDetalleLista.Refresh();
+
+            ndCantidad.Value = 1;
 
         }
 
@@ -71,7 +74,7 @@ namespace PROYECTO_FINAL_Progra_II
         private void Form_NuevaLista_Load(object sender, EventArgs e)
         {
             SupermercadoRepository supermercadoRepository = new SupermercadoRepository();
-            var supermercados = supermercadoRepository.GetSupermercados();
+            supermercados = supermercadoRepository.GetSupermercados();
             foreach (var supermercado in supermercados) 
             {
                 cmbSupermercados.Items.Add(supermercado.Nombre);
@@ -85,6 +88,10 @@ namespace PROYECTO_FINAL_Progra_II
             }
 
             CargarProductos();
+            ListaCompraRepository repository = new ListaCompraRepository();
+            var newId = repository.GetNewId();
+            lbIdLista.Text = newId.ToString();
+
         }
         private void CargarProductos()
         {
@@ -112,6 +119,54 @@ namespace PROYECTO_FINAL_Progra_II
         {
 
             CargarProductos();
+
+        }
+
+        private void btnEliminarProducto_Click(object sender, EventArgs e)
+        {
+            if (dtgDetalleLista.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Debe seleccionar el producto que desea eliminar");
+                return;
+            }
+            else{
+                int seleccionado = dtgDetalleLista.SelectedRows[0].Index;
+                dtgDetalleLista.DataSource = null;
+                detalleListas.RemoveAt(seleccionado);
+                dtgDetalleLista.DataSource = detalleListas;
+            }
+        }
+
+        private void bton_Guardar_Click(object sender, EventArgs e)
+        {
+            if (cmbSupermercados.SelectedIndex != -1 && dtgDetalleLista.Rows.Count > 0) { 
+            ListaCompra ls = new ListaCompra();
+            ls.FechaCompra = DateTime.Now;
+            ls.IdSupermercado = supermercados[cmbSupermercados.SelectedIndex].Id;
+            ListaCompraRepository repository = new ListaCompraRepository();
+            ls.Id = repository.AddListaCompra(ls);
+
+
+                foreach (DetalleListaDto d in detalleListas)
+                {
+                    DetalleLista dl = new DetalleLista();
+                    dl.IdListaCompra = ls.Id;
+                    dl.IdProducto = d.IdProducto;
+                    dl.Cantidad = d.Cantidad;
+                    dl.Precio = d.Precio;
+
+                    DetalleListaRepository repositoryDetalle = new DetalleListaRepository();
+                    repositoryDetalle.AddDetalleLista(dl);
+
+                }
+
+                MessageBox.Show("Lista de compra guardada correctamente");
+                dtgDetalleLista.DataSource = null;
+                detalleListas = new List<DetalleListaDto>();
+                dtgDetalleLista.DataSource = detalleListas;
+                var newId = repository.GetNewId();
+                lbIdLista.Text = newId.ToString();
+            }
 
         }
     }

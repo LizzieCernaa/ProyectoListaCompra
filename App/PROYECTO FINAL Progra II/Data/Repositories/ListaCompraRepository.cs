@@ -16,7 +16,7 @@ namespace PROYECTO_FINAL_Progra_II.Data.Repositories
 
             //Generamos la consulta con sus correspondientes parametros, agregamos
             //OUTPUT para que nos devuelva el id del registro insertado.
-            string sql = @"insert into Supermercado (Nombre)
+            string sql = @"insert into ListaCompra (FechaCompra, IdSupermercado)
                                 OUTPUT INSERTED.Id
                                values( @FechaCompra, @IdSupermercado);";
 
@@ -28,6 +28,22 @@ namespace PROYECTO_FINAL_Progra_II.Data.Repositories
                 idSupermercado = listaCompra.IdSupermercado,
 
             });
+
+            //Devolvemos el id del registro insertado
+            return id;
+        }
+
+        public int GetNewId()
+        {
+            var db = this.GetConnection();
+
+            //Generamos la consulta con sus correspondientes parametros, agregamos
+            //OUTPUT para que nos devuelva el id del registro insertado.
+            string sql = @"SELECT MAX(Id) +1  Id FROM ListaCompra;";
+
+
+            //Mapeamos los parametros y ejecutamos la consulta.
+            var id = db.QuerySingle<int>(sql);
 
             //Devolvemos el id del registro insertado
             return id;
