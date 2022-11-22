@@ -46,13 +46,13 @@
             this.btnEliminarProducto = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.lbIdLista = new System.Windows.Forms.Label();
-            this.productoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.precioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idCategoriaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idSupermercadoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fotoDataGridViewImageColumn = new System.Windows.Forms.DataGridViewImageColumn();
+            this.productoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dtgDetalleLista)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtgProductos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ndCantidad)).BeginInit();
@@ -244,10 +244,6 @@
             this.lbIdLista.TabIndex = 24;
             this.lbIdLista.Text = "-";
             // 
-            // productoBindingSource
-            // 
-            this.productoBindingSource.DataSource = typeof(PROYECTO_FINAL_Progra_II.Data.Models.Producto);
-            // 
             // idDataGridViewTextBoxColumn
             // 
             this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
@@ -302,6 +298,10 @@
             this.fotoDataGridViewImageColumn.Name = "fotoDataGridViewImageColumn";
             this.fotoDataGridViewImageColumn.ReadOnly = true;
             this.fotoDataGridViewImageColumn.Width = 125;
+            // 
+            // productoBindingSource
+            // 
+            this.productoBindingSource.DataSource = typeof(PROYECTO_FINAL_Progra_II.Data.Models.Producto);
             // 
             // Form_NuevaLista
             // 
