@@ -36,21 +36,22 @@ namespace PROYECTO_FINAL_Progra_II.Data.Repositories
 
         }
 
-        public List<Producto> GetProducto()
+        public List<Producto> GetProducto( int IdCategoria)
         {
+
+            var parameters = new { IdCategoria = IdCategoria };
             //SQL que ejecutara Dapper, aquí puedes jugar con los orders que quieras.
-            string sql = @"select Id, Nombre, Precio, Foto, IdCategoria, IdSupermercado from Producto order by Nombre;";
+            string sql = @"select Id, Nombre, Precio, Foto, IdCategoria, IdSupermercado from Producto where IdCategoria = @IdCategoria order by Nombre;";
 
             //Iniciar la conexión con la base de datos
             var db = this.GetConnection();
 
             //Ejecutar la consulta SQL y almacenar las líneas en nuestro modelo. 
-            var productos = db.Query<Producto>(sql);
+            var productos = db.Query<Producto>(sql, parameters);
 
             //Dapper devuelve un IEnumerable para trabajar más cómodos lo convertimos a listas. 
             return productos.ToList();
-        }
 
-       
+        }
     }
 }

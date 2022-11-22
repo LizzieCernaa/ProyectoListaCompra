@@ -9,12 +9,15 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using PROYECTO_FINAL_Progra_II.Data.Models;
 using PROYECTO_FINAL_Progra_II.Data.Repositories;
-
+using PROYECTO_FINAL_Progra_II.Dto;
 
 namespace PROYECTO_FINAL_Progra_II
 {
     public partial class Form_NuevaLista : Form
     {
+        double total;
+        List<Categoria> categorias;
+        List<DetalleListaDto> detalleListas = new List<DetalleListaDto>();
         public Form_NuevaLista()
         {
             InitializeComponent();
@@ -27,10 +30,36 @@ namespace PROYECTO_FINAL_Progra_II
 
         private void btn_AgregarProductos_Click(object sender, EventArgs e)
         {
- 
-           frmAgregarProductoLista frm = new frmAgregarProductoLista();
-            frm.MdiParent = this.ParentForm;
-            frm.Show();
+
+            if (ndCantidad.Value == 0) 
+            {
+                MessageBox.Show("Tienes que seleccionar una cantidad");
+                return;
+            }
+
+            if (dtgProductos.SelectedRows.Count == 0) 
+            {
+                MessageBox.Show("Tienes que seleccionar un producto");
+                return;
+            }
+
+
+            var Dt = new DetalleListaDto();
+            Dt.IdProducto = 8;
+            Dt.Cantidad = 17;
+            Dt.Nombre = "Lechuga";
+            Dt.Precio = 10.50;
+
+            total += Dt.SubTotal;
+            lbTotal.Text = total.ToString();
+            detalleListas.Add(Dt);
+
+            dtgDetalleLista.DataSource = null;
+            dtgDetalleLista.Refresh();
+
+            dtgDetalleLista.DataSource = detalleListas;
+            dtgDetalleLista.Refresh();
+
         }
 
 
@@ -47,7 +76,25 @@ namespace PROYECTO_FINAL_Progra_II
             {
                 cmbSupermercados.Items.Add(supermercado.Nombre);
             }
-    
+
+            CategoriaRepository categoriaRepository = new CategoriaRepository();
+            categorias = categoriaRepository.GetCategoria();
+            foreach (var categoria in categorias)
+            {
+                cmbCategoria.Items.Add(categoria.Nombre);
+            }
+
+            CargarProductos();
+        }
+        private void CargarProductos()
+        {
+            ProductoRepository productoRepository = new ProductoRepository();
+
+            if ( cmbCategoria.SelectedIndex != -1 )
+            {
+                var pr = productoRepository.GetProducto(categorias[cmbCategoria.SelectedIndex].Id);
+                dtgProductos.DataSource = pr;
+            }
         }
 
         private void btn_Actualizar_Click(object sender, EventArgs e)
@@ -55,8 +102,16 @@ namespace PROYECTO_FINAL_Progra_II
 
         }
 
-        private void txt_Supermercado_TextChanged(object sender, EventArgs e)
+        private void frmAgregarProductoLista_Load(object sender, EventArgs e)
         {
+
+    
+        }
+
+        private void cmbCategoria_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+            CargarProductos();
 
         }
     }

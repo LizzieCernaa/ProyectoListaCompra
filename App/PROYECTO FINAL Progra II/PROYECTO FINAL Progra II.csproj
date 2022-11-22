@@ -71,6 +71,7 @@
     <Compile Include="Data\Repositories\Repository.cs" />
     <Compile Include="Data\Models\Supermercado.cs" />
     <Compile Include="Data\Repositories\SupermercadoRepository.cs" />
+    <Compile Include="Dto\DetalleListaDto.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>

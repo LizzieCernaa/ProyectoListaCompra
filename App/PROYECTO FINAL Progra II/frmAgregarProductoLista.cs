@@ -41,8 +41,11 @@ namespace PROYECTO_FINAL_Progra_II
         private void CargarProductos() 
         {
             ProductoRepository productoRepository = new ProductoRepository();
-            var pr = productoRepository.GetProducto();
-            dtgProductos.DataSource = pr;
+            if (cmbCategoria.SelectedIndex != -1)
+            {
+                var pr = productoRepository.GetProducto(categorias[cmbCategoria.SelectedIndex].Id);
+                dtgProductos.DataSource = pr;
+            }
         }
     }
 }
