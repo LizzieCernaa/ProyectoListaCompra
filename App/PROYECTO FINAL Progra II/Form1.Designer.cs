@@ -35,12 +35,9 @@
             this.añadirProductosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.actualizarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mostrarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.tablasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.historialDeComprasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.comprasPorListaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.eliminarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.opcionesToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.pruebaDeConexiónToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -51,11 +48,10 @@
             this.opcionesToolStripMenuItem,
             this.actualizarToolStripMenuItem,
             this.mostrarToolStripMenuItem,
-            this.eliminarToolStripMenuItem,
-            this.opcionesToolStripMenuItem1});
+            this.eliminarToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(800, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(800, 30);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -66,7 +62,7 @@
             this.crearListaToolStripMenuItem,
             this.añadirProductosToolStripMenuItem});
             this.opcionesToolStripMenuItem.Name = "opcionesToolStripMenuItem";
-            this.opcionesToolStripMenuItem.Size = new System.Drawing.Size(66, 24);
+            this.opcionesToolStripMenuItem.Size = new System.Drawing.Size(66, 26);
             this.opcionesToolStripMenuItem.Text = "Nuevo";
             this.opcionesToolStripMenuItem.Click += new System.EventHandler(this.opcionesToolStripMenuItem_Click);
             // 
@@ -87,27 +83,19 @@
             // actualizarToolStripMenuItem
             // 
             this.actualizarToolStripMenuItem.Name = "actualizarToolStripMenuItem";
-            this.actualizarToolStripMenuItem.Size = new System.Drawing.Size(89, 24);
+            this.actualizarToolStripMenuItem.Size = new System.Drawing.Size(89, 26);
             this.actualizarToolStripMenuItem.Text = "Actualizar";
             this.actualizarToolStripMenuItem.Click += new System.EventHandler(this.actualizarToolStripMenuItem_Click);
             // 
             // mostrarToolStripMenuItem
             // 
             this.mostrarToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tablasToolStripMenuItem,
             this.historialDeComprasToolStripMenuItem,
             this.comprasPorListaToolStripMenuItem});
             this.mostrarToolStripMenuItem.Name = "mostrarToolStripMenuItem";
-            this.mostrarToolStripMenuItem.Size = new System.Drawing.Size(74, 24);
+            this.mostrarToolStripMenuItem.Size = new System.Drawing.Size(74, 26);
             this.mostrarToolStripMenuItem.Text = "Mostrar";
             this.mostrarToolStripMenuItem.Click += new System.EventHandler(this.mostrarToolStripMenuItem_Click);
-            // 
-            // tablasToolStripMenuItem
-            // 
-            this.tablasToolStripMenuItem.Name = "tablasToolStripMenuItem";
-            this.tablasToolStripMenuItem.Size = new System.Drawing.Size(243, 26);
-            this.tablasToolStripMenuItem.Text = "Tablas";
-            this.tablasToolStripMenuItem.Click += new System.EventHandler(this.tablasToolStripMenuItem_Click);
             // 
             // historialDeComprasToolStripMenuItem
             // 
@@ -126,30 +114,15 @@
             // eliminarToolStripMenuItem
             // 
             this.eliminarToolStripMenuItem.Name = "eliminarToolStripMenuItem";
-            this.eliminarToolStripMenuItem.Size = new System.Drawing.Size(77, 24);
+            this.eliminarToolStripMenuItem.Size = new System.Drawing.Size(77, 26);
             this.eliminarToolStripMenuItem.Text = "Eliminar";
             this.eliminarToolStripMenuItem.Click += new System.EventHandler(this.eliminarToolStripMenuItem_Click);
-            // 
-            // opcionesToolStripMenuItem1
-            // 
-            this.opcionesToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.pruebaDeConexiónToolStripMenuItem});
-            this.opcionesToolStripMenuItem1.Name = "opcionesToolStripMenuItem1";
-            this.opcionesToolStripMenuItem1.Size = new System.Drawing.Size(85, 24);
-            this.opcionesToolStripMenuItem1.Text = "Opciones";
-            // 
-            // pruebaDeConexiónToolStripMenuItem
-            // 
-            this.pruebaDeConexiónToolStripMenuItem.BackColor = System.Drawing.SystemColors.Info;
-            this.pruebaDeConexiónToolStripMenuItem.Name = "pruebaDeConexiónToolStripMenuItem";
-            this.pruebaDeConexiónToolStripMenuItem.Size = new System.Drawing.Size(225, 26);
-            this.pruebaDeConexiónToolStripMenuItem.Text = "Prueba de Conexión";
-            this.pruebaDeConexiónToolStripMenuItem.Click += new System.EventHandler(this.pruebaDeConexiónToolStripMenuItem_Click);
             // 
             // MenúPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -172,10 +145,7 @@
         private System.Windows.Forms.ToolStripMenuItem actualizarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem mostrarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem eliminarToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem tablasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem historialDeComprasToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem opcionesToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem pruebaDeConexiónToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem crearListaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem añadirProductosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem comprasPorListaToolStripMenuItem;
