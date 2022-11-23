@@ -24,17 +24,25 @@ namespace PROYECTO_FINAL_Progra_II
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Producto producto = new Producto();
-            producto.Nombre = txtNombre.Text;
-            producto.Precio =double.Parse(txtPrecio.Text);
-            producto.IdCategoria = categorias[cmbCategoria.SelectedIndex].Id;
-            producto.IdSupermercado = supermercados[cmbSupermercados.SelectedIndex].Id;
-            producto.Foto = ImageToByteArray(ptxFoto.Image);
+            try
+            {
+                Producto producto = new Producto();
+                producto.Nombre = txtNombre.Text;
+                producto.Precio = double.Parse(txtPrecio.Text);
+                producto.IdCategoria = categorias[cmbCategoria.SelectedIndex].Id;
+                producto.IdSupermercado = supermercados[cmbSupermercados.SelectedIndex].Id;
+                producto.Foto = ImageToByteArray(ptxFoto.Image);
 
-            var repository = new ProductoRepository();
-            var resul = repository.AddProducto(producto);
+                var repository = new ProductoRepository();
+                var resul = repository.AddProducto(producto);
 
-            MessageBox.Show("PRODUCTO GUARDADO SATISFATORIAMENTE");
+                MessageBox.Show("PRODUCTO GUARDADO SATISFATORIAMENTE");
+
+            }
+            catch (Exception ex) 
+            {
+                MessageBox.Show("Error al tratar de guardar el producto " + ex.Message);  
+            }
 
         }
 

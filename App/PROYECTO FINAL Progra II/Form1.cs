@@ -124,9 +124,22 @@ namespace PROYECTO_FINAL_Progra_II
 
         private void comprasPorListaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Form_Productos productos= new Form_Productos();
-            productos.MdiParent = this;
-            productos.Show();
+          
+        }
+
+        private void agregarProductosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form_AgregarProductos agregarProductos = new Form_AgregarProductos();
+            agregarProductos.MdiParent = this;
+            agregarProductos.Show();
+
+        }
+
+        private void historicoDeComprasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form_Historial Historial = new Form_Historial();
+            Historial.MdiParent = this;
+            Historial.Show();
         }
     }
 }

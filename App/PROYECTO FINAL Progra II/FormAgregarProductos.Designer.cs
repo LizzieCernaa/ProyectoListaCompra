@@ -123,10 +123,11 @@
             // ptxFoto
             // 
             this.ptxFoto.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.ptxFoto.Image = global::PROYECTO_FINAL_Progra_II.Properties.Resources.No_Image_Placeholder_svg;
             this.ptxFoto.Location = new System.Drawing.Point(454, 66);
             this.ptxFoto.Name = "ptxFoto";
             this.ptxFoto.Size = new System.Drawing.Size(276, 208);
-            this.ptxFoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ptxFoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.ptxFoto.TabIndex = 14;
             this.ptxFoto.TabStop = false;
             // 

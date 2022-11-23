@@ -32,12 +32,9 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.opcionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.crearListaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.añadirProductosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.actualizarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.mostrarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.historialDeComprasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.comprasPorListaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.eliminarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.mantenimientoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.agregarProductosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.historicoDeComprasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -46,12 +43,10 @@
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.opcionesToolStripMenuItem,
-            this.actualizarToolStripMenuItem,
-            this.mostrarToolStripMenuItem,
-            this.eliminarToolStripMenuItem});
+            this.mantenimientoToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(800, 30);
+            this.menuStrip1.Size = new System.Drawing.Size(800, 28);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -60,63 +55,40 @@
             this.opcionesToolStripMenuItem.BackColor = System.Drawing.SystemColors.Control;
             this.opcionesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.crearListaToolStripMenuItem,
-            this.añadirProductosToolStripMenuItem});
+            this.historicoDeComprasToolStripMenuItem});
             this.opcionesToolStripMenuItem.Name = "opcionesToolStripMenuItem";
-            this.opcionesToolStripMenuItem.Size = new System.Drawing.Size(66, 26);
-            this.opcionesToolStripMenuItem.Text = "Nuevo";
+            this.opcionesToolStripMenuItem.Size = new System.Drawing.Size(75, 24);
+            this.opcionesToolStripMenuItem.Text = "Clientes";
             this.opcionesToolStripMenuItem.Click += new System.EventHandler(this.opcionesToolStripMenuItem_Click);
             // 
             // crearListaToolStripMenuItem
             // 
             this.crearListaToolStripMenuItem.Name = "crearListaToolStripMenuItem";
-            this.crearListaToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.crearListaToolStripMenuItem.Size = new System.Drawing.Size(236, 26);
             this.crearListaToolStripMenuItem.Text = "Crear Lista";
             this.crearListaToolStripMenuItem.Click += new System.EventHandler(this.crearListaToolStripMenuItem_Click);
             // 
-            // añadirProductosToolStripMenuItem
+            // mantenimientoToolStripMenuItem
             // 
-            this.añadirProductosToolStripMenuItem.Name = "añadirProductosToolStripMenuItem";
-            this.añadirProductosToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
-            this.añadirProductosToolStripMenuItem.Text = "Añadir Productos";
-            this.añadirProductosToolStripMenuItem.Click += new System.EventHandler(this.añadirProductosToolStripMenuItem_Click);
+            this.mantenimientoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.agregarProductosToolStripMenuItem});
+            this.mantenimientoToolStripMenuItem.Name = "mantenimientoToolStripMenuItem";
+            this.mantenimientoToolStripMenuItem.Size = new System.Drawing.Size(130, 24);
+            this.mantenimientoToolStripMenuItem.Text = "Mantenimientos";
             // 
-            // actualizarToolStripMenuItem
+            // agregarProductosToolStripMenuItem
             // 
-            this.actualizarToolStripMenuItem.Name = "actualizarToolStripMenuItem";
-            this.actualizarToolStripMenuItem.Size = new System.Drawing.Size(89, 26);
-            this.actualizarToolStripMenuItem.Text = "Actualizar";
-            this.actualizarToolStripMenuItem.Click += new System.EventHandler(this.actualizarToolStripMenuItem_Click);
+            this.agregarProductosToolStripMenuItem.Name = "agregarProductosToolStripMenuItem";
+            this.agregarProductosToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.agregarProductosToolStripMenuItem.Text = "Agregar Productos";
+            this.agregarProductosToolStripMenuItem.Click += new System.EventHandler(this.agregarProductosToolStripMenuItem_Click);
             // 
-            // mostrarToolStripMenuItem
+            // historicoDeComprasToolStripMenuItem
             // 
-            this.mostrarToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.historialDeComprasToolStripMenuItem,
-            this.comprasPorListaToolStripMenuItem});
-            this.mostrarToolStripMenuItem.Name = "mostrarToolStripMenuItem";
-            this.mostrarToolStripMenuItem.Size = new System.Drawing.Size(74, 26);
-            this.mostrarToolStripMenuItem.Text = "Mostrar";
-            this.mostrarToolStripMenuItem.Click += new System.EventHandler(this.mostrarToolStripMenuItem_Click);
-            // 
-            // historialDeComprasToolStripMenuItem
-            // 
-            this.historialDeComprasToolStripMenuItem.Name = "historialDeComprasToolStripMenuItem";
-            this.historialDeComprasToolStripMenuItem.Size = new System.Drawing.Size(243, 26);
-            this.historialDeComprasToolStripMenuItem.Text = "Historial de compras";
-            this.historialDeComprasToolStripMenuItem.Click += new System.EventHandler(this.historialDeComprasToolStripMenuItem_Click);
-            // 
-            // comprasPorListaToolStripMenuItem
-            // 
-            this.comprasPorListaToolStripMenuItem.Name = "comprasPorListaToolStripMenuItem";
-            this.comprasPorListaToolStripMenuItem.Size = new System.Drawing.Size(243, 26);
-            this.comprasPorListaToolStripMenuItem.Text = "Compras de productos";
-            this.comprasPorListaToolStripMenuItem.Click += new System.EventHandler(this.comprasPorListaToolStripMenuItem_Click);
-            // 
-            // eliminarToolStripMenuItem
-            // 
-            this.eliminarToolStripMenuItem.Name = "eliminarToolStripMenuItem";
-            this.eliminarToolStripMenuItem.Size = new System.Drawing.Size(77, 26);
-            this.eliminarToolStripMenuItem.Text = "Eliminar";
-            this.eliminarToolStripMenuItem.Click += new System.EventHandler(this.eliminarToolStripMenuItem_Click);
+            this.historicoDeComprasToolStripMenuItem.Name = "historicoDeComprasToolStripMenuItem";
+            this.historicoDeComprasToolStripMenuItem.Size = new System.Drawing.Size(236, 26);
+            this.historicoDeComprasToolStripMenuItem.Text = "Historico de Compras";
+            this.historicoDeComprasToolStripMenuItem.Click += new System.EventHandler(this.historicoDeComprasToolStripMenuItem_Click);
             // 
             // MenúPrincipal
             // 
@@ -142,13 +114,10 @@
 
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem opcionesToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem actualizarToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem mostrarToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem eliminarToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem historialDeComprasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem crearListaToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem añadirProductosToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem comprasPorListaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem mantenimientoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem agregarProductosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem historicoDeComprasToolStripMenuItem;
     }
 }
 
