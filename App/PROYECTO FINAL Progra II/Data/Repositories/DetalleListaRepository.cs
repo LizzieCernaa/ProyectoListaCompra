@@ -36,19 +36,20 @@ namespace PROYECTO_FINAL_Progra_II.Data.Repositories
             return id;
         }
 
-        public List<DetalleCompraHistoricoDto> GetDetalleHistoricoDtos()
+        public List<DetalleCompraHistoricoDto> GetDetalleHistoricoDtos( int idListaCompra)
         {
+            var parameters = new { idListaCompra = idListaCompra };
             //SQL que ejecutara Dapper, aquí puedes jugar con los orders que quieras.
             string sql = @"SELECT d.IdProducto, d.Precio, d.Cantidad, p.Nombre Producto,p.Foto
                             FROM DetalleLista d
                             INNER JOIN Producto p on d.IdProducto = p.Id
-                            WHERE d.IdListaCompra = 7;";
+                            WHERE d.IdListaCompra = @idListaCompra";
 
             //Iniciar la conexión con la base de datos
             var db = this.GetConnection();
 
             //Ejecutar la consulta SQL y almacenar las líneas en nuestro modelo. 
-            var detalleCompra = db.Query<DetalleCompraHistoricoDto>(sql);
+            var detalleCompra = db.Query<DetalleCompraHistoricoDto>(sql, parameters);
 
             //Dapper devuelve un IEnumerable para trabajar más cómodos lo convertimos a listas. 
             return detalleCompra.ToList();

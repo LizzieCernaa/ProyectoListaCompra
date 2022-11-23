@@ -44,22 +44,31 @@ namespace PROYECTO_FINAL_Progra_II
         private void dtgHistorico_SelectionChanged(object sender, EventArgs e)
         {
 
-            DetalleListaRepository detalleLista = new DetalleListaRepository();
-
-            var lista = detalleLista.GetDetalleHistoricoDtos();
-
-            dtgDetalle.DataSource = lista;
-            foreach (DataGridViewRow row in dtgDetalle.Rows)
+          
+            if (dtgHistorico.SelectedRows.Count > 0)
             {
-                row.Height = 75;
-            }
-            total = 0;
-            foreach (var nombre in lista) 
-            {
-                total += nombre.SubTotal;
-            }
+                var idLista = int.Parse(dtgHistorico.SelectedRows[0].Cells[0].Value.ToString());
 
-            lbTotal.Text = total.ToString();
+                DetalleListaRepository detalleLista = new DetalleListaRepository();
+
+                var lista = detalleLista.GetDetalleHistoricoDtos(idLista);
+
+                dtgDetalle.DataSource = lista;
+
+                foreach (DataGridViewRow row in dtgDetalle.Rows)
+                {
+                    row.Height = 75;
+                }
+                total = 0;
+                foreach (var nombre in lista)
+                {
+                    total += nombre.SubTotal;
+                }
+
+                lbTotal.Text = total.ToString();
+
+                
+            }
         }
     }
 }
