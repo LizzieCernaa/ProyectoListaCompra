@@ -46,13 +46,13 @@
             this.btnEliminarProducto = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.lbIdLista = new System.Windows.Forms.Label();
+            this.productoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.precioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idCategoriaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idSupermercadoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fotoDataGridViewImageColumn = new System.Windows.Forms.DataGridViewImageColumn();
-            this.productoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dtgDetalleLista)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtgProductos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ndCantidad)).BeginInit();
@@ -146,15 +146,16 @@
             this.idSupermercadoDataGridViewTextBoxColumn,
             this.fotoDataGridViewImageColumn});
             this.dtgProductos.DataSource = this.productoBindingSource;
-            this.dtgProductos.Location = new System.Drawing.Point(595, 168);
+            this.dtgProductos.Location = new System.Drawing.Point(566, 170);
             this.dtgProductos.MultiSelect = false;
             this.dtgProductos.Name = "dtgProductos";
             this.dtgProductos.ReadOnly = true;
             this.dtgProductos.RowHeadersWidth = 51;
             this.dtgProductos.RowTemplate.Height = 24;
             this.dtgProductos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtgProductos.Size = new System.Drawing.Size(866, 310);
+            this.dtgProductos.Size = new System.Drawing.Size(668, 310);
             this.dtgProductos.TabIndex = 15;
+            this.dtgProductos.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgProductos_CellContentClick);
             // 
             // ndCantidad
             // 
@@ -213,6 +214,7 @@
             this.lbTotal.TabIndex = 21;
             this.lbTotal.Text = "0.0";
             this.lbTotal.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lbTotal.Click += new System.EventHandler(this.lbTotal_Click);
             // 
             // btnEliminarProducto
             // 
@@ -244,6 +246,10 @@
             this.lbIdLista.TabIndex = 24;
             this.lbIdLista.Text = "-";
             // 
+            // productoBindingSource
+            // 
+            this.productoBindingSource.DataSource = typeof(PROYECTO_FINAL_Progra_II.Data.Models.Producto);
+            // 
             // idDataGridViewTextBoxColumn
             // 
             this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
@@ -251,7 +257,7 @@
             this.idDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
             this.idDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idDataGridViewTextBoxColumn.Width = 125;
+            this.idDataGridViewTextBoxColumn.Width = 50;
             // 
             // nombreDataGridViewTextBoxColumn
             // 
@@ -269,7 +275,7 @@
             this.precioDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.precioDataGridViewTextBoxColumn.Name = "precioDataGridViewTextBoxColumn";
             this.precioDataGridViewTextBoxColumn.ReadOnly = true;
-            this.precioDataGridViewTextBoxColumn.Width = 125;
+            this.precioDataGridViewTextBoxColumn.Width = 50;
             // 
             // idCategoriaDataGridViewTextBoxColumn
             // 
@@ -278,7 +284,7 @@
             this.idCategoriaDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.idCategoriaDataGridViewTextBoxColumn.Name = "idCategoriaDataGridViewTextBoxColumn";
             this.idCategoriaDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idCategoriaDataGridViewTextBoxColumn.Width = 125;
+            this.idCategoriaDataGridViewTextBoxColumn.Width = 50;
             // 
             // idSupermercadoDataGridViewTextBoxColumn
             // 
@@ -287,27 +293,23 @@
             this.idSupermercadoDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.idSupermercadoDataGridViewTextBoxColumn.Name = "idSupermercadoDataGridViewTextBoxColumn";
             this.idSupermercadoDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idSupermercadoDataGridViewTextBoxColumn.Width = 125;
+            this.idSupermercadoDataGridViewTextBoxColumn.Width = 50;
             // 
             // fotoDataGridViewImageColumn
             // 
             this.fotoDataGridViewImageColumn.DataPropertyName = "Foto";
             this.fotoDataGridViewImageColumn.HeaderText = "Foto";
-            this.fotoDataGridViewImageColumn.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Stretch;
+            this.fotoDataGridViewImageColumn.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
             this.fotoDataGridViewImageColumn.MinimumWidth = 6;
             this.fotoDataGridViewImageColumn.Name = "fotoDataGridViewImageColumn";
             this.fotoDataGridViewImageColumn.ReadOnly = true;
             this.fotoDataGridViewImageColumn.Width = 125;
             // 
-            // productoBindingSource
-            // 
-            this.productoBindingSource.DataSource = typeof(PROYECTO_FINAL_Progra_II.Data.Models.Producto);
-            // 
             // Form_NuevaLista
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1487, 699);
+            this.ClientSize = new System.Drawing.Size(1292, 699);
             this.Controls.Add(this.lbIdLista);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.btnEliminarProducto);
@@ -358,12 +360,12 @@
         private System.Windows.Forms.Button btnEliminarProducto;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label lbIdLista;
+        private System.Windows.Forms.BindingSource productoBindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombreDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn precioDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn idCategoriaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn idSupermercadoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewImageColumn fotoDataGridViewImageColumn;
-        private System.Windows.Forms.BindingSource productoBindingSource;
     }
 }

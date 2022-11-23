@@ -5,10 +5,11 @@ using System.Text;
 using System.Threading.Tasks;
 using PROYECTO_FINAL_Progra_II.Data.Models;
 using Dapper;
+using PROYECTO_FINAL_Progra_II.Dto;
 
 namespace PROYECTO_FINAL_Progra_II.Data.Repositories
 {
-    public class DetalleListaRepository:Repository
+    public class DetalleListaRepository : Repository
     {
         public int AddDetalleLista(DetalleLista detalleLista)
         {
@@ -34,5 +35,25 @@ namespace PROYECTO_FINAL_Progra_II.Data.Repositories
             //Devolvemos el id del registro insertado
             return id;
         }
+
+        public List<DetalleCompraHistoricoDto> GetDetalleHistoricoDtos()
+        {
+            //SQL que ejecutara Dapper, aquí puedes jugar con los orders que quieras.
+            string sql = @"SELECT d.IdProducto, d.Precio, d.Cantidad, p.Nombre Producto,p.Foto
+                            FROM DetalleLista d
+                            INNER JOIN Producto p on d.IdProducto = p.Id
+                            WHERE d.IdListaCompra = 7;";
+
+            //Iniciar la conexión con la base de datos
+            var db = this.GetConnection();
+
+            //Ejecutar la consulta SQL y almacenar las líneas en nuestro modelo. 
+            var detalleCompra = db.Query<DetalleCompraHistoricoDto>(sql);
+
+            //Dapper devuelve un IEnumerable para trabajar más cómodos lo convertimos a listas. 
+            return detalleCompra.ToList();
+
+        }
     }
+
 }

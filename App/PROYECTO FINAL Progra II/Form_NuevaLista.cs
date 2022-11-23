@@ -102,7 +102,14 @@ namespace PROYECTO_FINAL_Progra_II
                 var pr = productoRepository.GetProducto(categorias[cmbCategoria.SelectedIndex].Id);
                 dtgProductos.DataSource = pr;
             }
+            var r = dtgProductos.Rows[0];
+            foreach (DataGridViewRow row in dtgProductos.Rows)
+            {
+               row.Height = 75;
+            }
+
         }
+
 
         private void btn_Actualizar_Click(object sender, EventArgs e)
         {
@@ -167,6 +174,16 @@ namespace PROYECTO_FINAL_Progra_II
                 var newId = repository.GetNewId();
                 lbIdLista.Text = newId.ToString();
             }
+
+        }
+
+        private void lbTotal_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dtgProductos_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
 
         }
     }
