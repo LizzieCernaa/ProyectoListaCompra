@@ -70,5 +70,10 @@ namespace PROYECTO_FINAL_Progra_II
                 
             }
         }
+
+        private void lbTotal_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -30,12 +30,14 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dtgHistorico = new System.Windows.Forms.DataGridView();
+            this.idListaCompraDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.supermercadoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fechaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.listaCompraHistoricoDtoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label1 = new System.Windows.Forms.Label();
             this.dtgListas = new System.Windows.Forms.Label();
             this.btn_Cerrar = new System.Windows.Forms.Button();
             this.dtgDetalle = new System.Windows.Forms.DataGridView();
-            this.label5 = new System.Windows.Forms.Label();
-            this.lbTotal = new System.Windows.Forms.Label();
             this.idProductoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.productoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.precioDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -43,14 +45,14 @@
             this.fotoDataGridViewImageColumn = new System.Windows.Forms.DataGridViewImageColumn();
             this.subTotalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.detalleCompraHistoricoDtoBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.idListaCompraDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.supermercadoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fechaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.listaCompraHistoricoDtoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.label5 = new System.Windows.Forms.Label();
+            this.lbTotal = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dtgHistorico)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.listaCompraHistoricoDtoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtgDetalle)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.detalleCompraHistoricoDtoBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.listaCompraHistoricoDtoBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // dtgHistorico
@@ -74,6 +76,37 @@
             this.dtgHistorico.TabIndex = 0;
             this.dtgHistorico.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dtgHistorico.SelectionChanged += new System.EventHandler(this.dtgHistorico_SelectionChanged);
+            // 
+            // idListaCompraDataGridViewTextBoxColumn
+            // 
+            this.idListaCompraDataGridViewTextBoxColumn.DataPropertyName = "IdListaCompra";
+            this.idListaCompraDataGridViewTextBoxColumn.HeaderText = "IdListaCompra";
+            this.idListaCompraDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.idListaCompraDataGridViewTextBoxColumn.Name = "idListaCompraDataGridViewTextBoxColumn";
+            this.idListaCompraDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idListaCompraDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // supermercadoDataGridViewTextBoxColumn
+            // 
+            this.supermercadoDataGridViewTextBoxColumn.DataPropertyName = "Supermercado";
+            this.supermercadoDataGridViewTextBoxColumn.HeaderText = "Supermercado";
+            this.supermercadoDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.supermercadoDataGridViewTextBoxColumn.Name = "supermercadoDataGridViewTextBoxColumn";
+            this.supermercadoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.supermercadoDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // fechaDataGridViewTextBoxColumn
+            // 
+            this.fechaDataGridViewTextBoxColumn.DataPropertyName = "Fecha";
+            this.fechaDataGridViewTextBoxColumn.HeaderText = "Fecha";
+            this.fechaDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.fechaDataGridViewTextBoxColumn.Name = "fechaDataGridViewTextBoxColumn";
+            this.fechaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.fechaDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // listaCompraHistoricoDtoBindingSource
+            // 
+            this.listaCompraHistoricoDtoBindingSource.DataSource = typeof(PROYECTO_FINAL_Progra_II.Dto.ListaCompraHistoricoDto);
             // 
             // label1
             // 
@@ -126,30 +159,6 @@
             this.dtgDetalle.RowTemplate.Height = 24;
             this.dtgDetalle.Size = new System.Drawing.Size(810, 369);
             this.dtgDetalle.TabIndex = 15;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Font = new System.Drawing.Font("MV Boli", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label5.Location = new System.Drawing.Point(713, 488);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(70, 23);
-            this.label5.TabIndex = 21;
-            this.label5.Text = "TOTAL";
-            // 
-            // lbTotal
-            // 
-            this.lbTotal.BackColor = System.Drawing.Color.Transparent;
-            this.lbTotal.Font = new System.Drawing.Font("MV Boli", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbTotal.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.lbTotal.Location = new System.Drawing.Point(893, 488);
-            this.lbTotal.Name = "lbTotal";
-            this.lbTotal.Size = new System.Drawing.Size(180, 23);
-            this.lbTotal.TabIndex = 22;
-            this.lbTotal.Text = "0.0";
-            this.lbTotal.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // idProductoDataGridViewTextBoxColumn
             // 
@@ -210,42 +219,47 @@
             // 
             this.detalleCompraHistoricoDtoBindingSource.DataSource = typeof(PROYECTO_FINAL_Progra_II.Dto.DetalleCompraHistoricoDto);
             // 
-            // idListaCompraDataGridViewTextBoxColumn
+            // label5
             // 
-            this.idListaCompraDataGridViewTextBoxColumn.DataPropertyName = "IdListaCompra";
-            this.idListaCompraDataGridViewTextBoxColumn.HeaderText = "IdListaCompra";
-            this.idListaCompraDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.idListaCompraDataGridViewTextBoxColumn.Name = "idListaCompraDataGridViewTextBoxColumn";
-            this.idListaCompraDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idListaCompraDataGridViewTextBoxColumn.Width = 125;
+            this.label5.AutoSize = true;
+            this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.Font = new System.Drawing.Font("MV Boli", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label5.Location = new System.Drawing.Point(713, 488);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(70, 23);
+            this.label5.TabIndex = 21;
+            this.label5.Text = "TOTAL";
             // 
-            // supermercadoDataGridViewTextBoxColumn
+            // lbTotal
             // 
-            this.supermercadoDataGridViewTextBoxColumn.DataPropertyName = "Supermercado";
-            this.supermercadoDataGridViewTextBoxColumn.HeaderText = "Supermercado";
-            this.supermercadoDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.supermercadoDataGridViewTextBoxColumn.Name = "supermercadoDataGridViewTextBoxColumn";
-            this.supermercadoDataGridViewTextBoxColumn.ReadOnly = true;
-            this.supermercadoDataGridViewTextBoxColumn.Width = 125;
+            this.lbTotal.BackColor = System.Drawing.Color.Transparent;
+            this.lbTotal.Font = new System.Drawing.Font("MV Boli", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTotal.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.lbTotal.Location = new System.Drawing.Point(893, 488);
+            this.lbTotal.Name = "lbTotal";
+            this.lbTotal.Size = new System.Drawing.Size(180, 23);
+            this.lbTotal.TabIndex = 22;
+            this.lbTotal.Text = "0.0";
+            this.lbTotal.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lbTotal.Click += new System.EventHandler(this.lbTotal_Click);
             // 
-            // fechaDataGridViewTextBoxColumn
+            // pictureBox1
             // 
-            this.fechaDataGridViewTextBoxColumn.DataPropertyName = "Fecha";
-            this.fechaDataGridViewTextBoxColumn.HeaderText = "Fecha";
-            this.fechaDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.fechaDataGridViewTextBoxColumn.Name = "fechaDataGridViewTextBoxColumn";
-            this.fechaDataGridViewTextBoxColumn.ReadOnly = true;
-            this.fechaDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // listaCompraHistoricoDtoBindingSource
-            // 
-            this.listaCompraHistoricoDtoBindingSource.DataSource = typeof(PROYECTO_FINAL_Progra_II.Dto.ListaCompraHistoricoDto);
+            this.pictureBox1.Image = global::PROYECTO_FINAL_Progra_II.Properties.Resources._120269;
+            this.pictureBox1.Location = new System.Drawing.Point(28, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(86, 66);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 23;
+            this.pictureBox1.TabStop = false;
             // 
             // Form_Historial
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1577, 605);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.lbTotal);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.dtgDetalle);
@@ -259,9 +273,10 @@
             this.Text = "HISTORIAL DE COMPRAS";
             this.Load += new System.EventHandler(this.Form_Historial_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dtgHistorico)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.listaCompraHistoricoDtoBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtgDetalle)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.detalleCompraHistoricoDtoBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.listaCompraHistoricoDtoBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -287,5 +302,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn cantidadDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewImageColumn fotoDataGridViewImageColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn subTotalDataGridViewTextBoxColumn;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

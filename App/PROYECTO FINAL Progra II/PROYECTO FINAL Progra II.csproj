@@ -80,23 +80,11 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form_Actualizar.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form_Actualizar.Designer.cs">
-      <DependentUpon>Form_Actualizar.cs</DependentUpon>
-    </Compile>
     <Compile Include="FormAgregarProductos.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormAgregarProductos.Designer.cs">
       <DependentUpon>FormAgregarProductos.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Form_Eliminar.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form_Eliminar.Designer.cs">
-      <DependentUpon>Form_Eliminar.cs</DependentUpon>
     </Compile>
     <Compile Include="Form_Historial.cs">
       <SubType>Form</SubType>
@@ -104,23 +92,11 @@
     <Compile Include="Form_Historial.Designer.cs">
       <DependentUpon>Form_Historial.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form_Mostrar.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form_Mostrar.Designer.cs">
-      <DependentUpon>Form_Mostrar.cs</DependentUpon>
-    </Compile>
     <Compile Include="Form_NuevaLista.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form_NuevaLista.Designer.cs">
       <DependentUpon>Form_NuevaLista.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmAgregarProductoLista.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmAgregarProductoLista.Designer.cs">
-      <DependentUpon>frmAgregarProductoLista.cs</DependentUpon>
     </Compile>
     <Compile Include="Listas.cs" />
     <Compile Include="Program.cs" />
@@ -128,26 +104,14 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form_Actualizar.resx">
-      <DependentUpon>Form_Actualizar.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="FormAgregarProductos.resx">
       <DependentUpon>FormAgregarProductos.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Form_Eliminar.resx">
-      <DependentUpon>Form_Eliminar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form_Historial.resx">
       <DependentUpon>Form_Historial.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form_Mostrar.resx">
-      <DependentUpon>Form_Mostrar.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Form_NuevaLista.resx">
       <DependentUpon>Form_NuevaLista.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmAgregarProductoLista.resx">
-      <DependentUpon>frmAgregarProductoLista.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -178,6 +142,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\No-Image-Placeholder.svg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\120269.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

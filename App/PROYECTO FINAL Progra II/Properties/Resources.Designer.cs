@@ -63,6 +63,16 @@ namespace PROYECTO_FINAL_Progra_II.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _120269 {
+            get {
+                object obj = ResourceManager.GetObject("120269", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap No_Image_Placeholder_svg {
             get {
                 object obj = ResourceManager.GetObject("No-Image-Placeholder.svg", resourceCulture);

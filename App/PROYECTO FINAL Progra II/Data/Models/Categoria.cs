@@ -11,4 +11,5 @@ namespace PROYECTO_FINAL_Progra_II.Data.Models
         public int Id { get; set; }
         public string Nombre { get; set; }
     }
+
 }
